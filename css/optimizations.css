@@ -1,0 +1,223 @@
+/* Ottimizzazioni aggiuntive per il portfolio di Fabio Siani */
+
+/* Ottimizzazioni per il caricamento delle immagini */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+/* Lazy loading per le immagini */
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+}
+
+/* Ottimizzazioni per dispositivi mobili */
+@media (max-width: 576px) {
+    section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        margin-bottom: 2.5rem;
+    }
+    
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+    }
+    
+    .footer-link {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Ottimizzazioni per tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+    .home-text h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Ottimizzazioni per il touch su dispositivi mobili */
+@media (hover: none) {
+    .btn:hover {
+        transform: none;
+    }
+    
+    .social-icon:hover {
+        transform: none;
+    }
+    
+    .timeline-content:hover {
+        transform: none;
+    }
+    
+    .nav-link:hover::after {
+        width: 0;
+    }
+    
+    .nav-link.active::after {
+        width: 100%;
+    }
+}
+
+/* Ottimizzazioni per la stampa */
+@media print {
+    header, footer, .scroll-top-btn, .preloader {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    section {
+        padding: 1rem 0;
+        min-height: auto;
+        page-break-inside: avoid;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+}
+
+/* Ottimizzazioni per l'accessibilità */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Ottimizzazioni per il contrasto */
+@media (prefers-contrast: more) {
+    :root {
+        --primary-color: #0055aa; /* Blu più scuro per miglior contrasto */
+        --secondary-color: #007700; /* Verde più scuro per miglior contrasto */
+        --accent-color: #bb0000; /* Rosso più scuro per miglior contrasto */
+        --dark-color: #000000;
+        --light-color: #ffffff;
+        --text-color: #000000;
+        --background-color: #ffffff;
+    }
+    
+    body {
+        line-height: 1.8;
+    }
+    
+    a {
+        text-decoration: underline;
+        font-weight: 600;
+    }
+    
+    .btn {
+        border: 2px solid #000;
+    }
+}
+
+/* Ottimizzazioni per la modalità scura */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #4dabf7;
+        --secondary-color: #69db7c;
+        --accent-color: #ff6b6b;
+        --dark-color: #ced4da;
+        --light-color: #212529;
+        --text-color: #f8f9fa;
+        --background-color: #1a1d20;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    .timeline-content {
+        background-color: #2d3439;
+    }
+    
+    header {
+        background-color: rgba(26, 29, 32, 0.95);
+    }
+    
+    .header-scrolled {
+        background-color: rgba(26, 29, 32, 0.98);
+    }
+    
+    .preloader {
+        background-color: var(--background-color);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #e0e5e6;
+    }
+    
+    .nav-link {
+        color: #e0e5e6;
+    }
+    
+    .logo {
+        color: #e0e5e6;
+    }
+    
+    .bar {
+        background-color: #e0e5e6;
+    }
+}
+
+/* Ottimizzazioni per la riduzione del movimento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .fade-in, .slide-in-left, .slide-in-right {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .skill-progress {
+        transition: none;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

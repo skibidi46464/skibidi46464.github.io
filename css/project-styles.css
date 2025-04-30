@@ -1,0 +1,162 @@
+/* Stili aggiuntivi per il formato dei progetti e competenze */
+
+.project-card {
+    background-color: #f0f2f3;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) translateX(2px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--primary-color);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.project-title {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.project-date {
+    color: var(--dark-color);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.project-description {
+    margin-bottom: 20px;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.project-meta-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.project-meta-title {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.competencies-section {
+    margin: 30px 0;
+}
+
+.competencies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.competencies-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.competencies-title {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.competencies-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.competency-item {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.competency-item:before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+.reflection-section {
+    background-color: rgba(236, 240, 241, 0.5);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-top: 30px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.reflection-title {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.reflection-content {
+    font-style: italic;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Stili per la modalità scura */
+@media (prefers-color-scheme: dark) {
+    .project-card {
+        background-color: #2d3439;
+        border-left: 3px solid var(--primary-color);
+    }
+    
+    .project-card:hover {
+        border-left: 5px solid var(--primary-color);
+    }
+    
+    .reflection-section {
+        background-color: rgba(35, 40, 45, 0.7);
+        border-left: 4px solid var(--secondary-color);
+    }
+    
+    .project-title {
+        color: var(--primary-color);
+    }
+    
+    .competencies-title {
+        color: #e0e5e6;
+    }
+}
+
+/* Stili responsive */
+@media (max-width: 768px) {
+    .project-meta {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .competencies-container {
+        flex-direction: column;
+    }
+}

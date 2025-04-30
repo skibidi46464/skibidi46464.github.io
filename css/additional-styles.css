@@ -1,0 +1,60 @@
+/* Stile per il pulsante home */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1001;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.home-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Stile per la sezione Work in Progress */
+.work-in-progress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.work-in-progress h3 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.work-in-progress p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Stile per la modalità scura */
+@media (prefers-color-scheme: dark) {
+    .home-button {
+        background-color: var(--primary-color);
+    }
+    
+    .work-in-progress h3 {
+        color: var(--primary-color);
+    }
+}

@@ -1,0 +1,49 @@
+/* Stile aggiuntivo per l'immagine nella sezione Chi Sono */
+.about-image { /* Applica a tutto il contenitore dell'immagine */
+  position: relative; /* Crea contesto di stacking */
+  z-index: 2; /* Assicura che sia sopra lo sfondo della sezione */
+  padding-right: 2rem; /* Mantiene il padding originale */
+  flex: 1; /* Mantiene la flessibilità originale */
+}
+
+.about-image img {
+  background-color: #ffffff; /* Sfondo bianco per isolare l'immagine */
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: block; /* Assicura che padding e stili siano applicati correttamente */
+  max-width: 90%; /* Leggermente ridotta per far vedere il padding */
+  margin: 0 auto; /* Centra l'immagine se il contenitore è più largo */
+}
+
+/* Stile aggiuntivo per il testo nella sezione Chi Sono */
+.about-text {
+  position: relative; /* Crea contesto di stacking */
+  z-index: 2; /* Assicura che sia sopra lo sfondo della sezione */
+  flex: 1; /* Mantiene la flessibilità originale */
+  background-color: rgba(30, 42, 56, 0.9); /* Sfondo semi-trasparente che riprende il colore della sezione */
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.about-info {
+  margin-top: 2rem;
+  background-color: rgba(26, 37, 48, 0.8); /* Sfondo leggermente più scuro per le informazioni */
+  padding: 15px;
+  border-radius: var(--border-radius);
+}
+
+.info-item {
+  margin-bottom: 1rem;
+}
+
+.info-title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.info-title span {
+  color: var(--light-color); /* Assicura che il testo dopo i due punti sia ben leggibile */
+}
+

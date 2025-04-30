@@ -1,0 +1,221 @@
+.activity-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 3.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.activity-image {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.activity-image img {
+    max-width: 100%;
+    max-height: 350px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.03);
+}
+
+.activity-content {
+    padding: 2.5rem;
+    flex: 1;
+}
+
+.activity-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.activity-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.activity-date {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 1rem;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.activity-description {
+    margin-bottom: 1.8rem;
+    line-height: 1.7;
+}
+
+.activity-results {
+    margin-bottom: 2.2rem;
+    padding: 1.5rem;
+    background-color: rgba(var(--primary-rgb), 0.03);
+    border-radius: 10px;
+}
+
+.activity-results h4 {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.activity-results h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 5px;
+    height: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.activity-competencies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.competency-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.competency-title {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.6rem;
+}
+
+.competency-list {
+    list-style: none;
+    padding: 0;
+}
+
+.competency-item {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.6;
+}
+
+.competency-item::before {
+    content: '•';
+    position: absolute;
+    left: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.activity-reflection {
+    background-color: rgba(var(--primary-rgb), 0.05);
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.reflection-title {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+}
+
+.reflection-content {
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .activity-competencies {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .activity-content {
+        padding: 1.8rem;
+    }
+    
+    .activity-image {
+        padding: 15px;
+    }
+    
+    .activity-image img {
+        max-height: 300px;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .activity-reflection {
+        background-color: rgba(var(--primary-rgb), 0.15);
+    }
+    
+    .activity-image {
+        background-color: #2d3439;
+    }
+    
+    .activity-results {
+        background-color: rgba(var(--primary-rgb), 0.08);
+    }
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 3.5rem 0 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
